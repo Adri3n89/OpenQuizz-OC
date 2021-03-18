@@ -79,26 +79,37 @@
                                     <outlet property="label" destination="mOg-Ql-RbY" id="Fe5-Fc-dBT"/>
                                 </connections>
                             </view>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Toutes mes félicitations !" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cyh-6R-Zys">
+                                <rect key="frame" x="105.5" y="517" width="203.5" height="75"/>
+                                <fontDescription key="fontDescription" name="Balham" family="Balham" pointSize="38"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.35411015150000003" green="0.40613895649999998" blue="0.49412947889999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
+                            <constraint firstItem="Cyh-6R-Zys" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="6ce-sR-2qZ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="dfq-xA-37f" secondAttribute="bottom" constant="61" id="7gi-am-FKq"/>
                             <constraint firstItem="mnF-x0-8ae" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9KV-u6-hJD"/>
                             <constraint firstItem="Xv1-wX-Oan" firstAttribute="top" secondItem="Wbd-2n-Dei" secondAttribute="bottom" constant="55" id="Maw-Z7-418"/>
                             <constraint firstItem="Xv1-wX-Oan" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="350" id="NkZ-SQ-u2N"/>
                             <constraint firstItem="dfq-xA-37f" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="189" id="TT9-NH-ckp"/>
+                            <constraint firstItem="Cyh-6R-Zys" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="UHk-1U-Zh4"/>
                             <constraint firstItem="Wbd-2n-Dei" firstAttribute="centerX" secondItem="dfq-xA-37f" secondAttribute="centerX" id="ZNB-rb-3rX"/>
                             <constraint firstItem="mnF-x0-8ae" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-40" id="bs7-IE-uc0"/>
                             <constraint firstItem="Wbd-2n-Dei" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="85" id="cWg-oh-9K6"/>
+                            <constraint firstItem="mnF-x0-8ae" firstAttribute="top" secondItem="Cyh-6R-Zys" secondAttribute="bottom" constant="150" id="cy6-Y3-zMg"/>
                             <constraint firstItem="dfq-xA-37f" firstAttribute="centerY" secondItem="mnF-x0-8ae" secondAttribute="centerY" id="m1Z-fu-8yT"/>
                             <constraint firstItem="Xv1-wX-Oan" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mev-cJ-AX3"/>
                             <constraint firstItem="Wbd-2n-Dei" firstAttribute="centerX" secondItem="Xv1-wX-Oan" secondAttribute="centerX" id="n5X-OS-coP"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Cyh-6R-Zys" secondAttribute="trailing" constant="20" id="oho-gJ-uu4"/>
                             <constraint firstItem="Wbd-2n-Dei" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="uGt-cJ-cYI"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="activityIndicator" destination="dfq-xA-37f" id="POO-So-jWb"/>
+                        <outlet property="congratLabel" destination="Cyh-6R-Zys" id="X77-Tm-WMg"/>
                         <outlet property="newGameButton" destination="mnF-x0-8ae" id="3mR-Nx-ATp"/>
                         <outlet property="questionView" destination="Wbd-2n-Dei" id="dPU-oa-AGF"/>
                         <outlet property="scoreLabel" destination="Xv1-wX-Oan" id="Dw8-HJ-iXh"/>

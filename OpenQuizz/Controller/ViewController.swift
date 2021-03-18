@@ -64,7 +64,7 @@ class ViewController: UIViewController {
             break
         }
         
-        scoreLabel.text = "\(game.score) / 10"
+        transformScore()
         
         let screenWidth = UIScreen.main.bounds.width
         var translationTransform: CGAffineTransform
@@ -83,6 +83,13 @@ class ViewController: UIViewController {
         }
     }
     
+    func transformScore(){
+        scoreLabel.transform = .identity
+        scoreLabel.text = "\(game.score) / 10"
+        scoreLabel.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
+        UILabel.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: [], animations:{self.scoreLabel.transform = .identity  }, completion: nil)
+    }
+    
     
     private func showQuestionView(){
         questionView.transform = .identity
@@ -91,8 +98,15 @@ class ViewController: UIViewController {
         switch game.state {
         case .ongoing:
             questionView.title = game.currentQuestion.title
+            congratLabel.isHidden = true
         case .over:
             questionView.title = "Game Over"
+            congratLabel.isHidden = false
+            if game.score >= 5 {
+                congratLabel.text = "Toutes mes Félicitations !"
+            } else {
+                congratLabel.text = "Dommage, essaie encore !"
+            }
         }
         
         UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: [], animations:{ self.questionView.transform = .identity
@@ -113,6 +127,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var questionView: QuestionView!
     
+    @IBOutlet weak var congratLabel: UILabel!
     
     @IBAction func didTapNewGameButton() {
         startNewGame()
@@ -125,6 +140,7 @@ class ViewController: UIViewController {
         questionView.style = .standard
         scoreLabel.text = "0 / 10"
         game.refresh()
+        congratLabel.isHidden = true
         
     }
     
